@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>About</title>
+    <link rel="stylesheet" href="./index.css" type="text/css" />
+  </head>
+  <body>
+    <div class="topnav" id="topNav">
+      <a href="/">Home</a>
+      <a href="/profile.html">Profile</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="topNavResponse()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div style="padding: 20px;">
+      <h2>About</h2>
+      <p>
+        This website is my portfolio, later i want to share a lot of things here
+        so stay tune.
+      </p>
+    </div>
+    <div class="footer">
+      <p>there is nothing here, you can explore another things on top :)</p>
+    </div>
+  </body>
+  <script>
+    function topNavResponse() {
+      var x = document.getElementById('topNav');
+      if (x.className === 'topnav') {
+        x.className += ' responsive';
+      } else {
+        x.className = 'topnav';
+      }
+    }
+  </script>
+</html>

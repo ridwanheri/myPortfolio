@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./index.css" type="text/css" />
+    <!-- For icon from fontAwesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="topnav" id="topNav">
+      <a href="/">Home</a>
+      <a href="/profile.html">Profile</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/about.html">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="topNavResponse()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div style="padding-left:16px">
+      <h1>My Portfolio</h1>
+      <div class="container">
+        <div class="mySlides">
+          <div class="numbertext">1 / 3</div>
+          <img src="img/img_nature_wide.jpg" style="width:100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 3</div>
+          <img src="img/img_mountains_wide.jpg" style="width:100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">3 / 3</div>
+          <img src="img/img_woods_wide.jpg" style="width:100%" />
+        </div>
+        <div class="caption-container">
+          <p id="caption">Nature is life</p>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="side">
+        <h2>About Me</h2>
+        <h5>Photo of me:</h5>
+        <img src="img/photo.jpg" alt="My Photo" width="auto" height="200px" />
+        <p>
+          My name is Ridwan Heri Wibowo, i'm 20 years old. i was born in 30th
+          August 1999. My hobby is basketball, not only that, my another hobby
+          is coding, playing game, bmx, and sometimes i like playing guitar.
+        </p>
+      </div>
+      <div class="main">
+        <h2>Aurora</h2>
+        <h5>Nature is Beautiful</h5>
+        <div>
+          <img src="img/img_lights_wide.jpg" alt="Aurora" />
+        </div>
+
+        <p>What is Aurora?</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>there is nothing here, you can explore another things on top :)</p>
+    </div>
+
+    <script>
+      function topNavResponse() {
+        var x = document.getElementById('topNav');
+        if (x.className === 'topnav') {
+          x.className += ' responsive';
+        } else {
+          x.className = 'topnav';
+        }
+      }
+
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName('mySlides');
+        var dots = document.getElementsByClassName('demo');
+        var captionText = document.getElementById('caption');
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(' active', '');
+        }
+        slides[slideIndex - 1].style.display = 'block';
+        dots[slideIndex - 1].className += ' active';
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+      }
+    </script>
+  </body>
+</html>
